@@ -1,0 +1,12 @@
+void PrintPattern(int Num) {
+	for (int i = 1;i <= Num;i++) {
+		for (int j = 0;j < i;j++) {
+			cout << i;
+		}
+		cout << endl;
+	}
+}
+int main() {
+	PrintPattern(5);
+	return 0;
+}

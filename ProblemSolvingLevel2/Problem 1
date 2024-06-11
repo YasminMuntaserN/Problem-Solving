@@ -1,0 +1,36 @@
+// write a Program print the Multiplication Table From 1 to 10
+
+#include <iostream>
+using namespace std;
+
+void PrintHeader()
+{
+	cout << "\t\t  Multiplication Table From 1 to 10 \n";
+	cout << "\t";
+	for (int i = 1;i <= 10;i++)
+	{
+		cout << "\t" << i;
+	}
+	cout << "\n------------------------------------------------------------------------------------------\n";
+
+}
+void MultiWithBase(int Num)
+{
+	for (int i = 1;i <= 10;i++)
+	{
+		cout << "\t" << i * Num;
+	}
+}
+void MultiplicationTable()
+{
+	PrintHeader();
+	for (int i = 1;i <= 10;i++) {
+			cout << i << "\t |"; MultiWithBase(i);
+			cout << endl;
+	}
+}
+int main()
+{
+	MultiplicationTable();
+	return 0;
+}

@@ -1,0 +1,35 @@
+//Write a program to fill  array with Random Numbers then Reverse elements another array
+
+int RandomNumber(int From, int To) {
+	int randNum = rand() % (To - From + 1) + From;
+	return randNum;
+}
+void FillArrayWithRandomNumbers(int arr[100], int& arrLength) {
+	cout << "\nEnter Array Length : ";
+	cin >> arrLength;
+	cout << "Enter Array Elements :\n";
+	for (int i = 0;i < arrLength;i++) {
+		arr[i] = RandomNumber(1, 100);
+		cout << arr[i] << " ";
+	}
+}
+void ReverseArray(int SourceArray[100], int ReverseArray[100], int& arrLength) {
+	cout << "\n Array 2 Element  :\n";
+	int j = arrLength - 1;
+	for (int i = 0;i < arrLength;i++) {
+		ReverseArray[i] = SourceArray[j];
+		cout << ReverseArray[i] << " ";
+		j--;
+	}
+
+}
+
+int main() {
+	//Seeds the random number generator in C++, called only once
+	srand((unsigned)time(NULL));
+	int Array1[100], Array2[100], arrLength;
+	FillArrayWithRandomNumbers(Array1, arrLength);
+	ReverseArray(Array1,Array2, arrLength);
+
+	return 0;
+}

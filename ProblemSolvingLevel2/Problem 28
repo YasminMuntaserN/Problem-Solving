@@ -1,0 +1,27 @@
+//Write a program to fill array with Random Nubers then copy array to another array
+
+void FillArraywithRandomNumbers(int arr[100], int& arrLength) {
+	cout << "Enter Array Length : ";
+	cin >> arrLength;
+	cout << "Enter Array Elements :\n";
+	for (int i = 0;i < arrLength;i++) {
+		 arr[i] =RandomNumber(1,100);
+		cout << arr[i] <<" ";
+	}
+}
+void copyArray(int SourceArray[100], int CopyArray[100], int& arrLength) {
+	cout << "\nEnter Array 2 Elements After copy :\n";
+	for (int i = 0;i < arrLength;i++) {
+		CopyArray[i] = SourceArray[i];
+		cout << CopyArray[i] << " ";
+	}
+}
+int main() {
+	//Seeds the random number generator in C++, called only once
+	srand((unsigned)time(NULL));
+	int SourceArray[100], CopyArray[100], arrLength;
+	FillArraywithRandomNumbers(SourceArray, arrLength);
+	copyArray(SourceArray, CopyArray, arrLength);
+
+	return 0;
+}

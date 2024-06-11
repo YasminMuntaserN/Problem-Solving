@@ -1,0 +1,46 @@
+//Wirte a program fill array with numbers , then print distinct numbers to another array
+void FillArray(int arr[100], int& arrLength) {
+	arrLength = 10;
+	arr[0] = 10;
+	arr[1] = 10; arr[2] = 10; arr[3] = 50;
+	arr[4] = 50; arr[5] = 70; arr[6] = 70;
+	arr[7] = 70; arr[8] = 70; arr[9] = 90;
+}
+int SearchNumberInArray(int arr[100], int& arrLength, int Num) {
+	for (int i = 0;i < arrLength;i++) {
+		if (arr[i] == Num) {
+			return i;
+
+		}
+	}
+	return -1;
+
+}
+void AddArrayElement(int Number, int arr[100], int& arrLength) {
+	//its a new element so we need to add the length by 1
+	arrLength++;
+	arr[arrLength - 1] = Number;
+}
+void CopyArray(int arr[100], int CopyArr[100], int& arrLength, int& arr2Length) {
+	int i = 0;
+	cout << "\nArray 2 Element After copy: \n";
+	for (int i = 0; i < arrLength; i++) {
+		if (SearchNumberInArray(CopyArr, arrLength,arr[i]) == -1)
+			AddArrayElement(arr[i], CopyArr, arr2Length);
+	}
+}
+void PrintArray(int arr[100], int arrLength) {
+	for (int i = 0; i < arrLength; i++) {
+		cout << arr[i] << " ";
+	}
+	cout << "\n";
+}
+int main() {
+	//Seeds the random number generator in C++, called only once
+	srand((unsigned)time(NULL));
+	int Array1[100] ,CopyArr[100], arrLength = 0, arr2Length = 0;
+	FillArray(Array1, arrLength);
+	CopyArray(Array1, CopyArr, arrLength, arr2Length);
+	PrintArray(CopyArr, arr2Length);
+	return 0;
+}

@@ -1,0 +1,9 @@
+// print abs Number 
+int abs(int Num) {
+	if (Num < 0) return Num * -1;
+	return Num;
+}
+int main() {
+	cout << abs(-10);
+	return 0;
+}

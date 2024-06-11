@@ -1,0 +1,34 @@
+//fill array with random number from -100 to 100 then print positive numbers
+int RandomNumber(int From, int To) {
+	int randNum = rand() % (To - From + 1) + From;
+	return randNum;
+}
+void FillArrayWithRandomNumbers(int arr[100], int& arrLength) {
+	cout << "\nEnter Array Length : ";
+	cin >> arrLength;
+	cout << "Enter Array Elements :\n";
+	for (int i = 0;i < arrLength;i++) {
+		arr[i] = RandomNumber(-100, 100);
+		cout << arr[i] << " ";
+	}
+}
+void AddArrayElement(int Number, int arr[100], int& arrLength) {
+	//its a new element so we need to add the length by 1
+	arrLength++;
+	arr[arrLength - 1] = Number;
+}
+int PositiveNumberCountInArray(int arr[100], int& arrLength) {
+	int count = 0;
+	for (int i = 0; i < arrLength; i++) {
+		if (arr[i]>=0) count++;
+	}
+	return count;
+}
+int main() {
+	//Seeds the random number generator in C++, called only once
+	srand((unsigned)time(NULL));
+	int Array1[100] ,arrLength = 0;
+	FillArrayWithRandomNumbers(Array1, arrLength);
+	cout <<"\nPositive Numbers count is : "<< PositiveNumberCountInArray(Array1, arrLength);
+	return 0;
+}

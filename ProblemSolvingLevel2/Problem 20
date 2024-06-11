@@ -1,0 +1,35 @@
+// Wirte a program to generate many Keys
+int RandomNumber(int From, int To) {
+	int randNum = rand() % (To - From + 1) + From;
+	return randNum;
+}
+
+string GenerateKey() {
+	string Key = "";
+	for (int i = 0;i < 4;i++) {
+		Key += char(RandomNumber(65, 90));
+	}
+	return Key;
+}
+string FullKey() {
+	string Key = "";
+	for (int i = 1;i < 4;i++) {
+		Key+=GenerateKey() + "-";
+		if (i == 3)Key += GenerateKey();
+
+
+	}
+	return Key;
+}
+void GenerateCode(int Num) {
+	for (int i = 1; i <= Num;i++) {
+		cout << "Key [" << i << "] : " << FullKey() << endl;
+	}
+}
+int main() {
+	//Seeds the random number generator in C++, called only once
+	     srand((unsigned)time(NULL));
+		 GenerateCode(5);
+
+	return 0;
+}

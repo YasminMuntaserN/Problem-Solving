@@ -1,0 +1,28 @@
+//Wirte a program to dynamically read numbers and save them in an array 
+int FillArray(int arr[100]) {
+	bool AddMore = true;
+	int i = 0;
+	while (AddMore) {
+		cout << "Please Enter a Number ?";
+		cin >> arr[i];i++;cout << endl;
+		cout << "Do You want to add More ?[0]:No,[1]:yes?";
+			cin >> AddMore;cout << endl;
+	}
+	return i;
+}
+void PrintArray(int arr[100], int arrLength) {
+	for (int i = 0; i < arrLength; i++) {
+		cout << arr[i] << " ";
+	}
+		cout << "\n";
+}
+
+int main() {
+	//Seeds the random number generator in C++, called only once
+	srand((unsigned)time(NULL));
+	int Array1[100], arrLength;
+	arrLength = FillArray(Array1);
+	cout << "Array Length :" << arrLength << endl;
+	cout << "Array Element : ";PrintArray(Array1, arrLength);
+	return 0;
+}

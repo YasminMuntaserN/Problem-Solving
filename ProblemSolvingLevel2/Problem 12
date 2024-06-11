@@ -1,0 +1,13 @@
+// Wirte a to print inverted Pattern
+void InvertedPattern(int Num) {
+	for (int i = Num;i >0;i--) {
+		for (int j = 0;j < i;j++) {
+			cout << i;
+		}
+		cout << endl;
+	}
+}
+int main() {
+	InvertedPattern(3);
+	return 0;
+}

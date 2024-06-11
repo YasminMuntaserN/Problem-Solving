@@ -1,0 +1,38 @@
+//read N elements and store them in array then print array Element and ask for a number to check
+
+void AddToArray(int arr[100], int& arrLength) {
+	cout << "Enter Array Length : ";
+	cin >> arrLength;
+	cout << "Enter Array Elements :\n";
+	for (int i = 0;i < arrLength;i++) {
+		cout << "Element [" << i+1 << "] : ";
+		cin >> arr[i];
+		cout << endl;
+	}
+}
+void printArrayElement(int arr[100], int arrLength) {
+	cout << "Original array : ";
+	for (int i = 0;i < arrLength;i++) {
+		cout << arr[i] << " ";
+	}
+	cout << endl;
+}
+int RepatedTimes(int arr[100], int arrLength,int Num) {
+	int count = 0;
+	for (int i = 0;i < arrLength;i++) {
+		if (arr[i] == Num)  count++;
+	}
+	return count;
+}
+int main() {
+	int arr[100], arrLength, NumberToCheck;
+	AddToArray(arr, arrLength);
+	cout << "Enter the number you want to check: ";
+	cin >>NumberToCheck;
+	printArrayElement(arr, arrLength);
+	cout << "\nNumber " << NumberToCheck; 
+	cout << " is repeated ";  
+	cout << RepatedTimes( arr, arrLength , NumberToCheck) << " time(s)\n";
+
+	return 0;
+}

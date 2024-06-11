@@ -1,0 +1,26 @@
+//Write a program to fill array with Random Nubers then print the sum of all number
+void FillArraywithRandomNumbers(int arr[100], int& arrLength) {
+	cout << "Enter Array Length : ";
+	cin >> arrLength;
+	cout << "Enter Array Elements :";
+	for (int i = 0;i < arrLength;i++) {
+		 arr[i] =RandomNumber(1,100);
+		cout << arr[i] <<" ";
+	}
+}
+int SumOfArrayElement(int arr[100], int& arrLength) {
+	int Sum = 0;
+	for (int i = 0;i < arrLength;i++) {
+		Sum += arr[i];
+	}
+	return Sum;
+}
+int main() {
+	//Seeds the random number generator in C++, called only once
+	srand((unsigned)time(NULL));
+	int arr[100], arrLength;
+	FillArraywithRandomNumbers(arr, arrLength);
+	cout << "\nSum of all Number is : " << SumOfArrayElement(arr, arrLength)<<endl;
+
+	return 0;
+}

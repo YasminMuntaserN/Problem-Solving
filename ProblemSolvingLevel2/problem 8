@@ -1,0 +1,16 @@
+//wirte a program to print digit frecquency 
+int frequencyTime(int Num , int NumToCalcFrequency) {
+	int count = 0, ModNum = 0;
+	while (Num > 0)
+	{
+		ModNum = Num % 10;
+		if (NumToCalcFrequency == ModNum)count++;
+		Num /= 10;
+	}
+	return count;
+}
+
+int main() {
+	cout <<"Digit 2 Frequency is " << frequencyTime(1223222, 2) <<" Time(s)";
+	return 0;
+}

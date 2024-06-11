@@ -1,0 +1,27 @@
+//Write a program to fill array with Random Nubers then print Minimum
+
+void FillArraywithRandomNumbers(int arr[100], int& arrLength) {
+	cout << "Enter Array Length : ";
+	cin >> arrLength;
+	cout << "Enter Array Elements :";
+	for (int i = 0;i < arrLength;i++) {
+		 arr[i] =RandomNumber(1,100);
+		cout << arr[i] <<" ";
+	}
+}
+int getMinNum(int arr[100], int& arrLength) {
+	int Min = arr[0];
+	for (int i = 1;i < arrLength;i++) {
+		if (Min > arr[i]) Min = arr[i];
+	}
+	return Min;
+}
+int main() {
+	//Seeds the random number generator in C++, called only once
+	srand((unsigned)time(NULL));
+	int arr[100], arrLength;
+	FillArraywithRandomNumbers(arr, arrLength);
+	cout << "\nMax Number is : " << getMinNum(arr, arrLength)<<endl;
+
+	return 0;
+}

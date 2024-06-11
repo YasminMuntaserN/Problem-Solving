@@ -1,0 +1,31 @@
+//Write a Program to get Random SamallLetter ,CapitalLetter,SpecialCharacter,Digit
+int RandomNumber(int From, int To) {
+	int randNum = rand() % (To - From + 1) + From;
+	return randNum;
+}
+
+enum enRandom{ SamallLetter = 1, CapitalLetter = 2, SpecialCharacter = 3, Digit = 4 };
+
+char getRandom(enRandom random) {
+	switch (random) {
+	case enRandom::CapitalLetter :
+		return char(RandomNumber(65, 90)); break;
+	case enRandom::SamallLetter:
+		return char(RandomNumber(97, 122)); break;
+	case enRandom::SpecialCharacter:
+		return char(RandomNumber(33, 47)); break;
+		case enRandom::Digit:
+		return char(RandomNumber(48, 57)); break;
+	}
+
+}
+int main() {
+	//Seeds the random number generator in C++, called only once
+	     srand((unsigned)time(NULL));
+	      cout << getRandom(enRandom::CapitalLetter) << endl;
+	     cout << getRandom(enRandom::SamallLetter) << endl;
+	   cout << getRandom(enRandom::SpecialCharacter) << endl;
+	   cout << getRandom(enRandom::Digit) << endl;
+
+	return 0;
+}

@@ -1,0 +1,16 @@
+//fill array with max size 100 with Random Numbers
+void FillArraywithRandomNumbers(int arr[100], int& arrLength) {
+	cout << "Enter Array Length : ";
+	cin >> arrLength;
+	cout << "Enter Array Elements :";
+	for (int i = 0;i < arrLength;i++) {
+		 arr[i] =RandomNumber(1,100);
+		cout << arr[i] <<" ";
+	}
+}
+int main() {
+	int arr[100], arrLength;
+	FillArraywithRandomNumbers(arr, arrLength);
+
+	return 0;
+}

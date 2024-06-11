@@ -1,0 +1,52 @@
+//Wirte a Program to fill arry with random number then copy only the Prime number in another array
+int RandomNumber(int From, int To) {
+	int randNum = rand() % (To - From + 1) + From;
+	return randNum;
+}
+bool CheckPrime(int N) {
+	for (int i = 2; i <= N / 2;i++)
+	{
+		if (N % i == 0)
+		{
+			return false;
+		}
+	}
+	return true;
+}
+void FillArrayWithRandomNumbers(int arr[100], int& arrLength) {
+	cout << "\nEnter Array Length : ";
+	cin >> arrLength;
+	cout << "Enter Array Elements :\n";
+	for (int i = 0;i < arrLength;i++) {
+		arr[i] = RandomNumber(1, 100);
+		cout << arr[i] << " ";
+	}
+}
+void AddArrayElement(int Number, int arr[100], int& arrLength) {
+	//its a new element so we need to add the length by 1
+	arrLength++;
+	arr[arrLength - 1] = Number;
+}
+void CopyArray(int arr[100], int CopyArr[100], int& arrLength, int& arr2Length) {
+	int i = 0;
+	cout << "\nArray 2 Element After copy: \n";
+	for (int i = 0; i < arrLength; i++) {
+		if (CheckPrime(arr[i]))
+			AddArrayElement(arr[i], CopyArr, arr2Length);
+	}
+}
+void PrintArray(int arr[100], int arrLength) {
+	for (int i = 0; i < arrLength; i++) {
+		cout << arr[i] << " ";
+	}
+	cout << "\n";
+}
+int main() {
+	//Seeds the random number generator in C++, called only once
+	srand((unsigned)time(NULL));
+	int Array1[100], CopyArr[100], arrLength = 0, arr2Length = 0;
+	FillArrayWithRandomNumbers(Array1, arrLength);
+	CopyArray(Array1, CopyArr, arrLength, arr2Length);
+	PrintArray(CopyArr, arr2Length);
+	return 0;
+}

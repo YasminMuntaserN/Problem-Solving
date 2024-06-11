@@ -1,0 +1,13 @@
+// Print letter pattern 
+void printLetter(int Num) {
+	for (int i = 1;i <= Num;i++) {
+		for (int j = 0;j < i;j++) {
+			cout << (char)(i + 64);
+		}
+		cout << endl;
+	}
+}
+int main() {
+	printLetter(26);
+	return 0;
+}

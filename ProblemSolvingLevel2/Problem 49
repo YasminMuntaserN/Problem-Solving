@@ -1,0 +1,22 @@
+//Ceil function
+int abs(int Num) {
+	if (Num < 0) return Num * -1;
+	return Num;
+}
+
+int Floor(float Num) {
+	return (int)Num;
+}
+int MyCeil(float Num) {
+	float N = abs(Num - (int)Num);
+	if (N > 0.5) {
+		return Floor(Num) + 1;
+	}
+	else Floor(Num);
+}
+int main() {
+	int Number = -11.7;
+	cout << "My Round Result: " << MyCeil(Number) <<endl;
+	cout << "C++ Round Result: " << ceil(Number) << endl;
+	return 0;
+}

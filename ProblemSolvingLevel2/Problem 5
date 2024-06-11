@@ -1,0 +1,13 @@
+// Wirte a program to read anumber and print int in reverse order   
+
+void ReverseOrder(int Num) {
+		while (Num >0)
+		{
+			cout << Num % 10  <<endl;
+			Num /= 10;
+     	}
+}
+int main() {
+	ReverseOrder(1234);
+	return 0;
+}

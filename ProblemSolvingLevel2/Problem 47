@@ -1,0 +1,25 @@
+//Round Function
+int abs(int Num) {
+	if (Num < 0) return Num * -1;
+	return Num;
+}
+int Round(float Num) {
+	float N = abs(Num - (int)Num);
+	if (N > 0.5) {
+		if (Num < 0)
+			return -1 * (1 + abs((int)Num));
+		else 
+			return (1 + abs((int)Num));
+	}else{
+		if (Num < 0)
+			return -1 * ( abs((int)Num));
+		else
+			return (abs((int)Num));
+	}
+}
+int main() {
+	int Number = -10.7;
+	cout << "My Round Result: " << Round(Number) <<endl;
+	cout << "C++ Round Result: " << round(Number) << endl;
+	return 0;
+}

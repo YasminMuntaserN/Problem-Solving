@@ -1,0 +1,45 @@
+//Write a program to fill two array with Random Numbers then sum their elements in third array to another array
+
+int RandomNumber(int From, int To) {
+	int randNum = rand() % (To - From + 1) + From;
+	return randNum;
+}
+void FillArrayWithRandomNumbers(int arr[100], int& arrLength) {
+	cout << "\nEnter Array Length : ";
+	cin >> arrLength;
+	cout << "Enter Array Elements :\n";
+	for (int i = 0;i < arrLength;i++) {
+		arr[i] = RandomNumber(1, 100);
+		cout << arr[i] << " ";
+	}
+}
+bool CheckPrime(int N) {
+	for (int i = 2; i <= N/2;i++)
+	{
+		if (N % i == 0)
+		{
+			return false;
+		}
+	}
+	return true;
+}
+void SumArrays(int Array1[100], int Array2[100],int sumArray[100], int& arrLength) {
+	cout << "\nsum of  Array 1 and Array 2  :\n";
+	for (int i = 0;i < arrLength;i++) {
+		sumArray[i] = Array1[i] + Array2[i];
+			cout << sumArray[i] << " ";
+		}
+	}
+
+
+int main() {
+	//Seeds the random number generator in C++, called only once
+	srand((unsigned)time(NULL));
+	int Array1[100], Array2[100], ArraySum[100], arrLength;
+	FillArrayWithRandomNumbers(Array1, arrLength);
+	FillArrayWithRandomNumbers(Array2, arrLength);
+
+	SumArrays(Array1, Array2, ArraySum, arrLength);
+
+	return 0;
+}

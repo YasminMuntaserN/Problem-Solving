@@ -1,0 +1,21 @@
+// print all digit frequency in Number
+int frequencyTime(int Num , int NumToCalcFrequency) {
+	int count = 0, ModNum = 0;
+	while (Num > 0)
+	{
+		ModNum = Num % 10;
+		if (NumToCalcFrequency == ModNum)count++;
+		Num /= 10;
+	}
+	return count;
+}
+void NumDigit(int Num) {
+	for(int i =0 ;i<10 ;i++){
+		if(frequencyTime(Num, i) >0)
+		cout << "Digit " << i << " Frequency is " << frequencyTime(Num, i) << " Time(s)" <<endl;
+	}
+}
+int main() {
+	NumDigit(5544574);
+	return 0;
+}

@@ -1,0 +1,10 @@
+// sqrt function 
+int Sqrt(int Num) {
+	return pow(Num, 0.5);
+}
+int main() {
+	int Number = 25;
+	cout << "My Sqrt Result: " << Sqrt(Number) <<endl;
+	cout << "C++ Sqrt Result: " << sqrt(Number) << endl;
+	return 0;
+}

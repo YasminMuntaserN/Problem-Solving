@@ -1,0 +1,26 @@
+// Writ a Progeam to print allPerfect Numbers from 1 to N
+
+bool checkPerfectNum(int N)
+{
+	int Count = 0;
+	for (int i = 1; i < N;i++)
+	{
+		if (N % i == 0)
+		{
+			Count += i;
+		}
+	}
+	return Count == N;
+}
+void PrintAllPerfectNumberFromOneToN(int N) {
+	for (int i = 1; i < N;i++)
+	{
+		if(checkPerfectNum(i)) cout<< i << endl;
+	}
+}
+int main() {
+	PrintAllPerfectNumberFromOneToN(500);
+	return 0;
+}
+
+

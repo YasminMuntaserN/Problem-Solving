@@ -1,0 +1,14 @@
+// print inverted latter pattern
+void printInvertedLetter(int Num) {
+	for (int i = Num;i > 0;i--) {
+		for (int j = 0;j < i;j++) {
+			cout <<(char) (i +64) ;
+		}
+		cout << endl;
+	}
+}
+int main() {
+	printInvertedLetter(5);
+	return 0;
+}
+

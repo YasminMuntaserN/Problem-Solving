@@ -1,0 +1,24 @@
+//Write a program to check if the Number is Perfect Number
+
+bool checkPerfectNum(int N)
+{
+	int Count = 0;
+	for (int i = 1; i < N;i++)
+	{
+		if (N % i == 0)
+		{
+			Count += i;
+		}
+	}
+	return Count == N;
+}
+
+int main() {
+	if (checkPerfectNum(6)) {
+		cout << "Is Perfect";
+	}
+	else {
+		cout << "Is Not Perfect";
+	}
+	return 0;
+}

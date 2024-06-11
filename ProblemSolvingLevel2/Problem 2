@@ -1,0 +1,28 @@
+// Write a Program print all Prime numbers from 1 to N
+
+bool CheckPrime(int N) {
+	for (int i = 2; i <N;i++)
+	{
+		if ( N % i == 0)
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
+void printPrimeNum(int N)
+{
+	for (int i = 1; i < N;i++)
+	{
+		if (CheckPrime(i))
+		{
+			cout << i << endl;
+		}
+	}
+}
+
+int main() {
+	printPrimeNum(10);
+	return 0;
+}

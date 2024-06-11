@@ -1,0 +1,39 @@
+//Write a program to fill array with Random Nubers then read a number and return ites Position and Order
+
+int RandomNumber(int From, int To) {
+	int randNum = rand() % (To - From + 1) + From;
+	return randNum;
+}
+void FillArrayWithRandomNumbers(int arr[100], int& arrLength) {
+	cout << "\nEnter Array Length : ";
+	cin >> arrLength;
+	cout << "Enter Array Elements :\n";
+	for (int i = 0;i < arrLength;i++) {
+		arr[i] = RandomNumber(1, 100);
+		cout << arr[i] << " ";
+	}
+}
+void SearchForNumber(int arr[100], int& arrLength) {
+	int Num ,Position;
+	cout << "\nEnter Array Length : \n";
+	cin >> Num;
+	for (int i = 0;i < arrLength;i++) {
+		if (arr[i]== Num) {
+			Position = i;
+			break;
+		}
+	}
+	cout << "\nThe Number found at Position : " << Position << endl;
+	cout << "The Number found in Order : " << (Position + 1) << endl;
+
+}
+
+int main() {
+	//Seeds the random number generator in C++, called only once
+	srand((unsigned)time(NULL));
+	int Array1[100], arrLength;
+	FillArrayWithRandomNumbers(Array1, arrLength);
+	SearchForNumber(Array1, arrLength);
+
+	return 0;
+}

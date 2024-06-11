@@ -1,0 +1,14 @@
+//print the sum of the digit
+int SumOfDigits(int Num) {
+	int sum = 0;
+		while (Num >0)
+		{
+			sum+=  Num % 10;
+			Num /= 10;
+     	}
+		return sum;
+}
+int main() {
+	cout <<SumOfDigits(1234);
+	return 0;
+}

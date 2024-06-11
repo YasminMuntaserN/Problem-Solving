@@ -1,0 +1,10 @@
+// Floor Function
+int Floor(float Num) {
+	return (int)Num;
+}
+int main() {
+	int Number = -11.3;
+	cout << "My Round Result: " << Floor(Number) <<endl;
+	cout << "C++ Round Result: " << floor(Number) << endl;
+	return 0;
+}
