@@ -1,4 +1,3 @@
-
 WITH DuplicateEmails AS (
     SELECT 
         Email, 
